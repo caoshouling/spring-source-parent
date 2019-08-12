@@ -1,0 +1,274 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.csl.study</groupId>
+	<artifactId>spring-source-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>spring-source-parent</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<javax.annotation.version>1.3.2</javax.annotation.version>
+		<thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
+		<servlet.version>4.0.1</servlet.version>
+		<spring.version>5.1.8.RELEASE</spring.version>
+		<fastjson.version>1.2.55</fastjson.version>
+		<freemarker.version>2.3.28</freemarker.version>
+		<jackson.version>2.9.5</jackson.version>
+		<pagehelper.version>5.1.10</pagehelper.version>
+		<mybatis.version>3.5.2</mybatis.version>
+		<mybatis.spring.version>2.0.2</mybatis.spring.version>
+		<mysql.connector.java.version>5.1.47</mysql.connector.java.version>
+		<hutool.version>4.6.1</hutool.version>
+		<qcloudsms.version>1.0.6</qcloudsms.version>
+		<hibernate.validator.version>5.4.3.Final</hibernate.validator.version>
+		<lombok.version>1.18.8</lombok.version>
+		<guava.version>28.0-jre</guava.version>
+		<QLExpress.version>3.2.3</QLExpress.version>
+		<aspectjweaver.version>1.9.4</aspectjweaver.version>
+		
+	</properties>
+ 
+	<dependencies>
+	    
+		<!-- logback -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		
+		<!-- 是由官方提供的对Spring的支持 -->
+		<dependency>
+		    <groupId>org.logback-extensions</groupId>
+		    <artifactId>logback-ext-spring</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<!-- 腾讯云短信服务 -->
+			<dependency>
+				<groupId>com.github.qcloudsms</groupId>
+				<artifactId>qcloudsms</artifactId>
+				<version>${qcloudsms.version}</version>
+			</dependency>
+			<!-- java注解，如@PostConstruct等 -->
+			<dependency>
+				<groupId>javax.annotation</groupId>
+				<artifactId>javax.annotation-api</artifactId>
+				<version>${javax.annotation.version}</version>
+			</dependency>
+			<!-- thymeleaf -->
+			<dependency>
+				<groupId>org.thymeleaf</groupId>
+				<artifactId>thymeleaf-spring5</artifactId>
+				<version>${thymeleaf.version}</version>
+			</dependency>
+			<!-- freemarker -->
+			<dependency>
+			    <groupId>org.freemarker</groupId>
+			    <artifactId>freemarker</artifactId>
+			    <version>${freemarker.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${servlet.version}</version>
+				<scope>provided</scope>
+			</dependency>
+	
+	        <dependency>
+	            <groupId>org.springframework</groupId>
+	            <artifactId>spring-context-support</artifactId>
+	            <version>${spring.version}</version>
+	        </dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+	        <dependency>
+	            <groupId>org.springframework</groupId>
+	            <artifactId>spring-tx</artifactId>
+	            <version>${spring.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.springframework</groupId>
+	            <artifactId>spring-jdbc</artifactId>
+	            <version>${spring.version}</version>
+	        </dependency>
+	        <!-- mybatis -->
+			<dependency>
+			    <groupId>org.mybatis</groupId>
+			    <artifactId>mybatis</artifactId>
+			    <version>${mybatis.version}</version>
+			</dependency>
+			<!-- mybatis-spring -->
+			<dependency>
+			    <groupId>org.mybatis</groupId>
+			    <artifactId>mybatis-spring</artifactId>
+			    <version>${mybatis.spring.version}</version>
+			</dependency>
+			<!-- pagehelper 分页插件 -->
+			<dependency>
+			    <groupId>com.github.pagehelper</groupId>
+			    <artifactId>pagehelper</artifactId>
+			    <version>${pagehelper.version}</version>
+			</dependency>
+  			<!--mysql驱动 -->
+			<dependency>
+	            <groupId>mysql</groupId>
+	            <artifactId>mysql-connector-java</artifactId>
+	            <version>${mysql.connector.java.version}</version>
+       		 </dependency>
+			<!--druid -->
+			<dependency>
+			    <groupId>com.alibaba</groupId>
+			    <artifactId>druid</artifactId>
+			    <version>1.1.19</version>
+			</dependency>
+	        <!-- hibernate-validator -->
+			<dependency>
+			    <groupId>org.hibernate</groupId>
+			    <artifactId>hibernate-validator</artifactId>
+			    <version>${hibernate.validator.version}</version>
+			</dependency>
+			<!-- 日志文件管理包 -->
+			<!-- 1.logback-classic包含了logback本身所需的slf4j-api.jar、logback-core.jar及logback-classsic.jar -->
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>1.2.3</version>
+			</dependency>
+			<!-- 是由官方提供的logback对Spring的支持 -->
+			<dependency>
+			    <groupId>org.logback-extensions</groupId>
+			    <artifactId>logback-ext-spring</artifactId>
+			    <version>0.1.5</version>
+			</dependency>
+			<!-- log4j -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.17</version>
+			</dependency>
+			<!-- log4j桥接到slf4j 注意：log4j-over-slf4j与 slf4j-log4j12 是冲突的 -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>log4j-over-slf4j</artifactId>
+				<version>1.7.25</version>
+			</dependency>
+
+			<!-- slf4j绑定log4j实现 -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.7.25</version>
+			</dependency>
+
+			<!-- jcl桥接到slf4j -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>1.7.25</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+ 			<dependency>
+			    <groupId>com.alibaba</groupId>
+			    <artifactId>fastjson</artifactId>
+			    <version>${fastjson.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+			<dependency>
+			    <groupId>cn.hutool</groupId>
+			    <artifactId>hutool-all</artifactId>
+			    <version>${hutool.version}</version>
+			</dependency>
+			<!-- lombok -->
+			<dependency>
+			    <groupId>org.projectlombok</groupId>
+			    <artifactId>lombok</artifactId>
+			    <version>${lombok.version}</version>
+			    <scope>provided</scope>
+			</dependency>
+			<!-- com.google.guava/guava：JVM内缓存、转义工具类库、xml html字符转义、集合操作、算数类型和超大数的运算工具包。、反射、限流算法等 -->
+			<dependency>
+			    <groupId>com.google.guava</groupId>
+			    <artifactId>guava</artifactId>
+			    <version>${guava.version}</version>
+			</dependency>
+			<!-- com.alibaba/QLExpress：特殊数学公式计算（高精度） -->
+			<dependency>
+			    <groupId>com.alibaba</groupId>
+			    <artifactId>QLExpress</artifactId>
+			    <version>${QLExpress.version}</version>
+			</dependency>
+			
+			<!--spring AOP aspectjweaver -->
+			<dependency>
+			    <groupId>org.aspectj</groupId>
+			    <artifactId>aspectjweaver</artifactId>
+			    <version>${aspectjweaver.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>3.8.1</version>
+				<scope>test</scope>
+			</dependency>
+
+		</dependencies>
+
+
+	</dependencyManagement>
+   
+	<build>
+	  <pluginManagement>
+	  
+		  <plugins>
+				<!-- <plugin> 
+						<groupId>org.springframework.boot</groupId> 
+						<artifactId>spring-boot-maven-plugin</artifactId> 
+					配置热启动
+					 	<configuration> 
+					 		<fork>true</fork> 
+					 	</configuration>
+					  </plugin> -->
+				<!--servlet容器 tomcat 插件 -->
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.2</version>
+				</plugin>
+			</plugins>
+	  
+	  </pluginManagement>
+		
+	</build>
+</project>
