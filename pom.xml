@@ -28,7 +28,7 @@
 		<qcloudsms.version>1.0.6</qcloudsms.version>
 		<hibernate.validator.version>5.4.3.Final</hibernate.validator.version>
 		<lombok.version>1.18.8</lombok.version>
-		<guava.version>28.0-jre</guava.version>
+		<guava.version>29.0-jre</guava.version>
 		<QLExpress.version>3.2.3</QLExpress.version>
 		<aspectjweaver.version>1.9.4</aspectjweaver.version>
 		
