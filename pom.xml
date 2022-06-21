@@ -23,7 +23,7 @@
 		<pagehelper.version>5.1.10</pagehelper.version>
 		<mybatis.version>3.5.2</mybatis.version>
 		<mybatis.spring.version>2.0.2</mybatis.spring.version>
-		<mysql.connector.java.version>5.1.47</mysql.connector.java.version>
+		<mysql.connector.java.version>8.0.28</mysql.connector.java.version>
 		<hutool.version>4.6.1</hutool.version>
 		<qcloudsms.version>1.0.6</qcloudsms.version>
 		<hibernate.validator.version>5.4.3.Final</hibernate.validator.version>
